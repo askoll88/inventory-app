@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инвентарь сталкера</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Хедер -->
+        <header class="header">
+            <h1>🎒 Инвентарь</h1>
+            <div class="player-info">
+                <span id="player-name">Сталкер</span>
+                <span class="money">💰 <span id="player-money">0</span>₽</span>
+            </div>
+        </header>
+
+        <!-- Вкладки -->
+        <nav class="tabs">
+            <button class="tab active" data-tab="weapons">🔫 Оружие</button>
+            <button class="tab" data-tab="armor">🛡️ Броня</button>
+            <button class="tab" data-tab="consumables">💊 Расходники</button>
+        </nav>
+
+        <!-- Контент -->
+        <main class="content">
+            <div id="weapons" class="tab-content active">
+                <div class="items-grid" id="weapons-grid"></div>
+            </div>
+            <div id="armor" class="tab-content">
+                <div class="items-grid" id="armor-grid"></div>
+            </div>
+            <div id="consumables" class="tab-content">
+                <div class="items-grid" id="consumables-grid"></div>
+            </div>
+        </main>
+
+        <!-- Статистика игрока -->
+        <footer class="stats-bar">
+            <div class="stat">
+                <span class="stat-icon">❤️</span>
+                <span class="stat-value"><span id="stat-health">100</span>/100</span>
+            </div>
+            <div class="stat">
+                <span class="stat-icon">⚔️</span>
+                <span class="stat-value"><span id="stat-attack">10</span></span>
+            </div>
+            <div class="stat">
+                <span class="stat-icon">🛡️</span>
+                <span class="stat-value"><span id="stat-defense">0</span></span>
+            </div>
+            <div class="stat">
+                <span class="stat-icon">⚡</span>
+                <span class="stat-value"><span id="stat-fatigue">0</span>/100</span>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Модальное окно использования предмета -->
+    <div id="use-modal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modal-title">Использовать предмет?</h2>
+            <p id="modal-description">Описание предмета</p>
+            <div class="modal-buttons">
+                <button id="use-btn" class="btn btn-success">✅ Использовать</button>
+                <button id="close-modal" class="btn btn-secondary">❌ Отмена</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/@vkontakte/vk-bridge/dist/vk-bridge.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
